@@ -1,7 +1,7 @@
 package com.ordersmanager.om.model;
 
-import lombok.Data;
 
+import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,9 +13,15 @@ public class ClientOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
     @Enumerated(EnumType.STRING)
     private OrderCategory orderCategory;
     @Column(unique = true, nullable = false)
     private String description;
+    @ManyToOne
+    private Client client;
+
 }

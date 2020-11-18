@@ -6,8 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.util.List;
 
 @Entity
@@ -21,16 +20,17 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty(message = "First name is required")
+    @NotNull(message = "First name is required")
     private String firstName;
-    @NotEmpty(message = "Last name is required")
+    @NotNull(message = "Last name is required")
     private String lastName;
-    @Length(min = 9, max = 9, message = "9 digits are required")
+    @Size(min = 9, max = 9, message = "9 digits are required")
+    @Digits(integer = 9, fraction = 0)
     private int mobileNumber;
     @Pattern(regexp = "^(.+)@(.+)$")
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CLIENT_ID")
     List<ClientOrder> clientOrderList;
 }
