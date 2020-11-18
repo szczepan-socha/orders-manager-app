@@ -1,9 +1,12 @@
 package com.ordersmanager.om.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 @Table(name = "Orders")
 public class ClientOrder {
 

@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 
 @Entity
 @Table(name = "Clients")
@@ -28,4 +29,8 @@ public class Client {
     private int mobileNumber;
     @Pattern(regexp = "^(.+)@(.+)$")
     private String email;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "CLIENT_ID")
+    List<ClientOrder> clientOrderList;
 }
