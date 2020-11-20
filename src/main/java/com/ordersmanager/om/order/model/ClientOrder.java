@@ -1,6 +1,7 @@
-package com.ordersmanager.om.model;
+package com.ordersmanager.om.order.model;
 
 
+import com.ordersmanager.om.client.model.Client;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
@@ -12,9 +13,7 @@ public class ClientOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-
+    private long id;
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
     @Enumerated(EnumType.STRING)

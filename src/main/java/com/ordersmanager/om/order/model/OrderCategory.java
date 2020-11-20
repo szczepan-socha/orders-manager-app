@@ -1,4 +1,4 @@
-package com.ordersmanager.om.model;
+package com.ordersmanager.om.order.model;
 
 public enum OrderCategory {
 
