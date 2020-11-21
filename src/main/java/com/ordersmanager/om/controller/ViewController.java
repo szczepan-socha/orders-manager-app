@@ -22,7 +22,7 @@ public class ViewController {
     @GetMapping("/clients")
     public String getAllClients(Model model){
         model.addAttribute("clients", clientService.findAll());
-        return "clients-list";
+        return "client-list";
     }
 
     @PostMapping("/add")
