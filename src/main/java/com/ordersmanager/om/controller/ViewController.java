@@ -25,8 +25,9 @@ public class ViewController {
         return "client-list";
     }
 
-    @PostMapping("/add")
-    public String create() {
+    // get view add-client form
+    @GetMapping("/add-client")
+    public String addClient() {
         return "add-client";
     }
 
