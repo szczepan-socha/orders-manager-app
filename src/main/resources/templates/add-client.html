@@ -33,25 +33,25 @@
                 </div>
 
                 <!-- FORM -->
-                <form>
+                <form action="#" th:action="@{/add-client}" th:object="${client}" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFirstName">First name</label>
-                            <input type="text" class="form-control" id="inputFirstName">
+                            <input type="text" th:field="*{firstName}" name="firstName" class="form-control" id="inputFirstName">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputLastName">Last name</label>
-                            <input type="text" class="form-control" id="inputLastName">
+                            <input type="text" th:field="*{lastName}" name="lastName" class="form-control" id="inputLastName">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail">
+                            <input type="email" th:field="*{email}" name="email" class="form-control" id="inputEmail">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputMobileNumber">Mobile number</label>
-                            <input type="text" class="form-control" id="inputMobileNumber">
+                            <input type="text" th:field="*{mobileNumber}" name="mobileNumber" class="form-control" id="inputMobileNumber">
                         </div>
                     </div>
 

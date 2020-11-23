@@ -24,7 +24,7 @@ public class Client {
     private String firstName;
     @NotNull(message = "Last name is required")
     private String lastName;
-    @Size(min = 9, max = 9, message = "9 digits are required")
+//    @Size(min = 9, max = 9, message = "9 digits are required")
     private int mobileNumber;
     @Email
     private String email;

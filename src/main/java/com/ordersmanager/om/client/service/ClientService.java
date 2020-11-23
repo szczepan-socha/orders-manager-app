@@ -2,6 +2,7 @@ package com.ordersmanager.om.client.service;
 
 import com.ordersmanager.om.client.model.Client;
 import com.ordersmanager.om.client.repository.ClientRepository;
+import com.sun.xml.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,10 @@ public class ClientService {
 
     public List<Client> findAll(){
         return clientRepository.findAll();
+    }
+
+    // TODO need exceptions
+    public void saveClient(Client newClient) {
+        clientRepository.save(newClient);
     }
 }
