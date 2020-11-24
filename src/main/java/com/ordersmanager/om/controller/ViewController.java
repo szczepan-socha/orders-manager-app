@@ -6,21 +6,21 @@ import org.springframework.stereotype.Controller;
 import com.ordersmanager.om.client.service.ClientService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PatchMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class ViewController {
 
-     private final ClientService clientService;
+    private final ClientService clientService;
 
     @Autowired
     public ViewController(ClientService clientService) {
         this.clientService = clientService;
     }
-
 
 
     @GetMapping("/clients")
@@ -31,13 +31,13 @@ public class ViewController {
     }
 
     @PostMapping("/add-client")
-    public RedirectView addNewClient(@ModelAttribute("client") Client client){
+    public RedirectView addNewClient(@ModelAttribute("client") Client client) {
         clientService.saveClient(client);
         return new RedirectView("/clients");
-    }
 
-    @PatchMapping("/update")
-    public String update() {
-        return "update";
     }
 }
+
+
+
+
