@@ -1,0 +1,37 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <p>Napisz prostą maszynę losującą, czyli funkcję, która przyjmuje jako argument tablicę zawierającą listę osób. Twoja funkcja powinna zwracać losową osobę z tej tablicy. Przykładowa tablica do wywołania funkcji: const students = ["John", "Bill", "Emma", "Stella", "Rob"].</p>
+
+        <div class="z1">Dzien: <input type="text" name="input_z2" id="input_z2" value="5"></div>
+        <div><input type="button" name="button_z2" id="button_z2" onclick="sprawdz_z2()" value="Sprawdź dzień"></div>
+
+
+        <script>
+const students = ["John", "Bill", "Emma", "Stella", "Rob"];
+
+function randomPerson(list) {
+  return list[Math.floor(Math.random() * list.length)];
+} 
+
+console.log(randomPerson(students));
+console.log(randomPerson(students));
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

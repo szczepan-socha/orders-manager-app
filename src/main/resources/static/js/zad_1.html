@@ -1,0 +1,41 @@
+<html>
+    <head>
+       </head>
+           
+        <body>
+            <p>Zadanie 1:</strong> Zdefiniuj wewnątrz dokumentu HTML (nie w pliku zewnętrznym) z zadaniem funkcję sprawdz_z1(). Efektem działania funkcji powinno być wyskakujące okienko (alert) z informacją czy wpisania w input o id input_z1 liczba jest większa od 10. Jeżeli liczba będzie większa od 10 komunikat ma mieć treść "Warunek spełniony!" w przeciwnym przypadku komunikat ma mieć treść "Błąd! Warunek niespełniony!". </p>
+            
+            <div class="z1"><div><input type="text" id="input_z1" value="5"></div>
+                <div><input type="button" name="button_z1" id="button_z1" onclick="sprawdz_z1()" value="Sprawdź"></div>
+           
+        
+            <script>
+                var input = document.querySelector("#input_z1");
+                var btn = document.querySelector("#button_z1");
+                
+                btn.addEventListener("click", function(){
+                if(input.value > 10){
+                    
+                    alert("Warunek spełniony!");
+                }else{
+                    alert("Błąd");
+                }
+                                     
+                                     } ,false);
+
+
+                
+            </script>
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+   </body>
+</html>
