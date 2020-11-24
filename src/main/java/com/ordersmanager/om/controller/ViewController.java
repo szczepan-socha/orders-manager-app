@@ -1,12 +1,15 @@
 package com.ordersmanager.om.controller;
 
+import com.ordersmanager.om.client.model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.ordersmanager.om.client.service.ClientService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class ViewController {
@@ -27,9 +30,10 @@ public class ViewController {
         return "client-list";
     }
 
-    @PostMapping("/add")
-    public String create() {
-        return "add-client";
+    @PostMapping("/add-client")
+    public RedirectView addNewClient(@ModelAttribute("client") Client client){
+        clientService.saveClient(client);
+        return new RedirectView("/clients");
     }
 
     @PatchMapping("/update")
